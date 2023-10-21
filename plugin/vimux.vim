@@ -78,6 +78,7 @@ function! VimuxRunCommand(command, ...) abort
   if l:autoreturn ==# 1
     call VimuxSendKeys('Enter')
   endif
+  call VimuxTmux('select-'.VimuxOption('VimuxRunnerType').' -t '.g:VimuxRunnerIndex)
 endfunction
 
 function! VimuxSendText(text) abort
